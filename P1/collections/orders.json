@@ -1,0 +1,16 @@
+[
+  {
+    "user_id": "60e70d82d5f8b0a6ec92cf2a",
+    "product_id": "60e70d82d5f8b0a6ec92cf2d",
+    "quantity": 2,
+    "total_price": 999.98,
+    "order_date": "2024-5-18T10:30:00Z"
+  },
+  {
+    "user_id": "60e70d82d5f8b0a6ec92cf2b",
+    "product_id": "60e70d82d5f8b0a6ec92cf2e",
+    "quantity": 1,
+    "total_price": 899.99,
+    "order_date": "2024-6-17T14:15:00Z"
+  }
+]

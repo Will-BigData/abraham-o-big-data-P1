@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Washing Machine",
+    "category": "Appliances",
+    "price": 400,
+    "stock": 10,
+    "description": "Devices and gadgets like TVs, phones, etc.",
+    "launch_date": "1990-01-01T00:00:00Z"
+  },
+  {
+    "name": "Refrigerator",
+    "category": "Appliances",
+    "price": 600,
+    "stock": 5,
+    "description": "Devices and gadgets like TVs, phones, etc.",
+    "launch_date": "1990-01-01T00:00:00Z"
+  },
+  {
+    "name": "Smart TV",
+    "category": "Appliances",
+    "price": 499.99,
+    "stock": 30,
+    "description": "Devices and gadgets like TVs, phones, etc.",
+    "launch_date": "2023-10-18T19:50:36Z"
+  },
+  {
+    "name": "Laptop",
+    "category": "Computers",
+    "price": 899.99,
+    "stock": 20,
+    "description": "Laptops, desktops, and related accessories.",
+    "launch_date": "2023-10-18T19:50:36Z"
+  }
+]

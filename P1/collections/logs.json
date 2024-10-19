@@ -1,0 +1,20 @@
+[
+  {
+    "event": "user_login",
+    "username": "user1",
+    "description": "user1 logged in successfully",
+    "timestamp": "2023-10-18T10:35:00Z"
+  },
+  {
+    "event": "product_purchased",
+    "username": "user1",
+    "description": "User purchased 2 units of Smart TV",
+    "timestamp": "2023-10-18T10:00:00Z"
+  },
+  {
+    "event": "admin_login",
+    "username": "admin1",
+    "description": "admin1 logged in successfully",
+    "timestamp": "2023-10-18T10:35:00Z"
+  }
+]
