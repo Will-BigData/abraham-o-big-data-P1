@@ -5,7 +5,7 @@ from pymongo import MongoClient
 
 class MongoDBImporter:
     
-    def __init__(self, db_name='electronics_store', datasource = 'P1/collections'):
+    def __init__(self, db_name='electronics_store', datasource = 'datasource'):
         self.client = MongoClient('localhost', 27017)
         self.db = self.client[db_name]
         self.datasource = datasource
@@ -21,19 +21,19 @@ class MongoDBImporter:
         print(f'Inserted {len(result.inserted_ids)} documents into {collection_name}')
         
     def import_logs_to_db(self):
-        logs = self.load_datasource_file('C:/Users/abrah/Desktop/BigData-project-repo/Project_1/P1/collections/logs.json')
+        logs = self.load_datasource_file('logs.json')
         self.import_file_data('logs', logs)
 
     def import_orders_to_db(self):
-        orders = self.load_datasource_file('C:/Users/abrah/Desktop/BigData-project-repo/Project_1/P1/collections/orders.json')
+        orders = self.load_datasource_file('orders.json')
         self.import_file_data('orders', orders)
 
     def import_products_to_db(self):
-        products = self.load_datasource_file('C:/Users/abrah/Desktop/BigData-project-repo/Project_1/P1/collections/products.json')
+        products = self.load_datasource_file('products.json')
         self.import_file_data('products', products)
 
     def import_users_to_db(self):
-        users = self.load_datasource_file('C:/Users/abrah/Desktop/BigData-project-repo/Project_1/P1/collections/users.json')
+        users = self.load_datasource_file('users.json')
         self.import_file_data('users', users)
 
     def import_files_to_db(self):
@@ -41,7 +41,7 @@ class MongoDBImporter:
         self.import_orders_to_db()
         self.import_products_to_db()
         self.import_users_to_db()
-        print("All data has been imported successfully.")
+        print("All data have been imported successfully.")
 
 
 if __name__ == "__main__":
