@@ -1,4 +1,5 @@
 class LogService:
+    
     def __init__(self, log_dao):
         self.log_dao = log_dao
 

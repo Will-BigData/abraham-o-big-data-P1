@@ -25,6 +25,7 @@ class ElectronicsStoreApp:
         
         self.app.config.from_object(Config)
         self.db = Config.get_db()
+        Config.init_jwt(self.app)
 
         self.user_dao = UserDAO(self.db)
         self.user_service = UserService(self.user_dao)

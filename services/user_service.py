@@ -8,6 +8,13 @@ class UserService:
         if existing_user:
             raise ValueError("Username already exists")
         return self.user_dao.create_user(user_data)
+    
+    def authenticate_user(self, user_data):
+        if user_data:
+            existing_user = self.user_dao.get_user_by_username(user_data.get('username'))
+            if existing_user:
+                return existing_user
+        return None
 
     def get_all_users(self):
         return self.user_dao.get_all_users()
