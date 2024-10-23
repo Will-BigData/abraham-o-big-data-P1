@@ -1,6 +1,3 @@
-from bson import ObjectId
-
-
 class LogDAO:
     
     def __init__(self, db):
@@ -15,5 +12,5 @@ class LogDAO:
             {**log, "_id": str(log["_id"])} for log in logs
         ]        
 
-    def get_logs_by_user(self, user_id):
-        return list(self.collection.find({"user_id": ObjectId(user_id)}))
+    def get_logs_by_user(self, username):
+        return list(self.collection.find({"username": username}))

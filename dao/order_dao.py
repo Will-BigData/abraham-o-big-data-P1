@@ -19,4 +19,4 @@ class OrderDAO:
         return list(self.collection.find({"user_id": ObjectId(user_id)}))
 
     def delete_order(self, order_id):
-        return self.collection.delete_one({"_id": order_id})
+        return self.collection.delete_one({"_id": ObjectId(order_id)})

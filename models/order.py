@@ -8,6 +8,7 @@ class Order:
         self.quantity = quantity
         self.total_price = total_price
         self.order_date = order_date or datetime.now(datetime.timestamp.utc)
+        self.id = None
 
     def model_to_dict(self):
         return {
