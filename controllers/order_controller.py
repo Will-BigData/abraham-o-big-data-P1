@@ -19,7 +19,7 @@ class OrderController:
         def get_all_orders():
             orders = self.order_service.get_all_orders()
             return jsonify(orders), 200
-
+        
         @self.app.route('/orders/<order_id>', methods=['DELETE'])
         def delete_order(order_id):
             result = self.order_service.delete_order(order_id)

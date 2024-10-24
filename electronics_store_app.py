@@ -40,7 +40,7 @@ class ElectronicsStoreApp:
         self.product_controller = ProductController(self.app, self.product_service)
 
         self.order_dao = OrderDAO(self.db)
-        self.order_service = OrderService(self.order_dao)
+        self.order_service = OrderService(self.order_dao, log_dao)
         self.order_controller = OrderController(self.app, self.order_service)
         
        

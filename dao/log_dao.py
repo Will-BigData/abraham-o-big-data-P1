@@ -6,10 +6,9 @@ class LogDAO:
     def __init__(self, db):
         self.collection = db['logs']
 
-    def log_event(self, event, username, description):
+    def log_event(self, event, description):
         create_new_log_entry = {
             "event": event,
-            "username": username,
             "description": description,
             "timestamp": datetime.now(timezone.utc)
         }
@@ -20,6 +19,3 @@ class LogDAO:
         return [
             {**log, "_id": str(log["_id"])} for log in logs
         ]        
-
-    def get_logs_by_user(self, username):
-        return list(self.collection.find({"username": username}))

@@ -19,11 +19,4 @@ class LogController:
         def get_all_logs():
             logs = self.log_service.get_all_logs()
             return jsonify(logs), 200
-
-        @self.app.route('/logs/<username>')
-        def get_logs_by_user(username):
-            try:
-                logs = self.log_service.get_logs_by_user(username)
-                return jsonify(logs), 200
-            except Exception as e:
-                return jsonify({"error": str(e)}), 400
+        
