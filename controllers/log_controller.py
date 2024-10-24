@@ -10,9 +10,9 @@ class LogController:
     def add_routes(self):
         
         @self.app.route('/logs', methods=['POST'])
-        def create_new_log_entry():
+        def log_event():
             data = request.get_json()
-            result = self.log_service.create_new_log_entry(data)
+            result = self.log_service.log_event(data)
             return jsonify({"log_id": str(result.inserted_id)}), 201
 
         @self.app.route('/logs')

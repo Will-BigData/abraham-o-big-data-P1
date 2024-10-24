@@ -1,11 +1,14 @@
 class ProductService:
     
-    def __init__(self, product_dao):
+    def __init__(self, product_dao, log_dao):
         self.product_dao = product_dao
+        self.log_dao = log_dao
 
     def add_product(self, product):        
-        return self.product_dao.add_product(product)
-
+        added_product = self.product_dao.add_product(product)
+        self.log_dao.log_event('Add product', product.name, 'Product added successfully.')
+        return added_product
+    
     def get_all_products(self):
         return self.product_dao.get_all_products()
 

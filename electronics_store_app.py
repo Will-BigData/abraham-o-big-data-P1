@@ -27,24 +27,23 @@ class ElectronicsStoreApp:
         self.db = Config.get_db()
         Config.init_jwt(self.app)
 
+        log_dao = LogDAO(self.db)
+        log_service = LogService(log_dao)
+        self.log_controller = LogController(self.app, log_service)
+        
         self.user_dao = UserDAO(self.db)
-        self.user_service = UserService(self.user_dao)
+        self.user_service = UserService(self.user_dao, log_dao)
         UserController(self.app, self.user_service)
         
         self.product_dao = ProductDAO(self.db)
-        self.product_service = ProductService(self.product_dao)
+        self.product_service = ProductService(self.product_dao, log_dao)
         self.product_controller = ProductController(self.app, self.product_service)
 
         self.order_dao = OrderDAO(self.db)
         self.order_service = OrderService(self.order_dao)
         self.order_controller = OrderController(self.app, self.order_service)
         
-        log_dao = LogDAO(self.db)
-        log_service = LogService(log_dao)
-        self.log_controller = LogController(self.app, log_service)
-
-
-        
+       
     def run(self):
         self.app.run(host='localhost', port=5000)
 

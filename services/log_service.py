@@ -3,8 +3,8 @@ class LogService:
     def __init__(self, log_dao):
         self.log_dao = log_dao
 
-    def create_new_log_entry(self, log_data):
-        return self.log_dao.create_new_log_entry(log_data)
+    def log_event(self, log_data):
+        return self.log_dao.log_event(log_data.event, log_data.username, log_data.description)
 
     def get_all_logs(self):
         logs = self.log_dao.get_all_logs()
