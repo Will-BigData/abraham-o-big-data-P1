@@ -18,8 +18,11 @@ class ProductDAO:
     def get_products_by_category(self, category):
         return list(self.collection.find({"category": category}))
 
-    def update_product_quantity(self, product):
-        return self.collection.update_one({"_id": product._id}, {"$set": {"stock": product.stock}})
+    def get_product_by_id(self, product_id):
+        return self.collection.find_one({"_id": product_id})
+
+    def update_product_stock(self, product_id, new_stock):
+        return self.collection.update_one({"_id": ObjectId(product_id)}, {"$set": {"stock": new_stock}})
     
     def delete_product(self, product_id):
         return self.collection.delete_one({"_id": ObjectId(product_id)})

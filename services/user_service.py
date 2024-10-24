@@ -35,6 +35,11 @@ class UserService:
         if not user:
             raise ValueError("User not found")
         return user
+    
+    def update_user_role(self, user_id, new_role):
+        if new_role not in ["user", "admin"]:
+            raise ValueError("Invalid role")
+        return self.user_dao.update_user_role(user_id, new_role)
 
     def delete_user(self, user_id):
         return self.user_dao.delete_user(user_id)
